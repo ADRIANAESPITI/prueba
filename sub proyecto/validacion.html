@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Validacion</title>
+
+    <link rel="stylesheet" href="assets/demo.css">
+    <link rel="stylesheet" href="assets/form-validation.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+</head>
+
+<ul>
+    <li><a href="index.html">Basico</a></li>
+    <li><a href="form-register.html">Registro</a></li>
+    <li><a href="form-login.html">Iniciar sesión</a></li>
+    <li><a href="form-validation.html" class="active">Validacion</a></li>
+    <li><a href="form-search.html">Busqueda</a></li>
+</ul>
+
+
+<div class="main-content">
+
+
+    <form class="form-validation" method="post" action="#">
+
+        <div class="form-title-row">
+            <h1>VALIDACION</h1>
+        </div>
+
+        <div class="form-row form-input-name-row">
+
+            <label>
+                    <span>Nombre Completo</span>
+                    <input type="text" name="name" required>
+                </label>
+
+            <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+            <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+            <span class="form-invalid-data-info"></span>
+
+        </div>
+
+        <div class="form-row form-input-email-row">
+
+            <label>
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="email@example.com" required>
+                </label>
+
+            <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
+
+            <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
+            <span class="form-invalid-data-info"></span>
+
+        </div>
+
+        <div class="form-row">
+
+            <label>
+                    <span>Lista desplegable</span>
+                    <select name="dropdown">
+                        <option>Seleccione una Opcion</option>
+                        <option>Option Uno</option>
+                        <option>Option Dos</option>
+                        <option>Option Tres</option>
+                        <option>Option Cuatro</option>
+                    </select>
+                </label>
+
+        </div>
+
+        <div class="form-row">
+
+            <label class="form-checkbox">
+                    <span>Caja de verificacion</span>
+                    <input type="checkbox" name="checkbox" checked>
+                </label>
+
+        </div>
+
+        <div class="form-row">
+
+            <button type="submit">Enviar</button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        // A continuación se explica cómo mostrar un mensaje de error junto a un campo de formulario
+
+        var errorField = $('.form-input-name-row');
+
+        // Agregar la clase form-invalid-data mostrará
+        // El mensaje de error y la x roja para ese campo
+
+        errorField.addClass('form-invalid-data');
+        errorField.find('.form-invalid-data-info').text('ingrese nombre');
+
+
+        // A continuación se explica cómo marcar un campo con una marca de verificación verde
+
+        var successField = $('.form-input-email-row');
+
+        successField.addClass('form-valid-data');
+    });
+</script>
+
+</body>
+
+</html>
